@@ -1,26 +1,192 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Typographie — Sora chargée via next/font dans layout.tsx */
+  --font-sans: var(--font-sora), "Helvetica Neue", Arial, sans-serif;
+
+  /* Couleurs — surfaces */
+  --color-canvas:       #000000;
+  --color-canvas-soft:  #0A0A0A;
+  --color-panel:        #FFFFFF;
+  --color-grain-1:      #1F1F1F;
+  --color-grain-2:      #5C5C5C;
+  --color-grain-3:      #9C9C9C;
+
+  /* Couleurs — premier plan */
+  --color-fg:           #FFFFFF;
+  --color-fg-90:        rgba(255,255,255,0.90);
+  --color-fg-70:        rgba(255,255,255,0.72);
+  --color-fg-50:        rgba(255,255,255,0.55);
+  --color-fg-25:        rgba(255,255,255,0.28);
+  --color-fg-15:        rgba(255,255,255,0.15);
+
+  /* Couleurs — accent */
+  --color-accent:       #C9F1DF;
+  --color-accent-strong:#7BD3AC;
+
+  /* Palette éditoriale (illustrations uniquement) */
+  --color-editorial-orange:   #E86A33;
+  --color-editorial-rust:     #9C2B1B;
+  --color-editorial-aubergine:#3B1A4A;
+  --color-editorial-cobalt:   #1A4FD6;
+  --color-editorial-sky:      #6FB7E8;
+  --color-editorial-magenta:  #C2348A;
+
+  /* Tailles de police */
+  --font-size-display-xl: clamp(56px, 7.2vw, 104px);
+  --font-size-display-lg: clamp(44px, 5.4vw, 76px);
+  --font-size-display-md: clamp(32px, 3.6vw, 52px);
+  --font-size-display-sm: clamp(24px, 2.4vw, 36px);
+  --font-size-lead:       clamp(18px, 1.4vw, 22px);
+  --font-size-body:       16px;
+  --font-size-body-sm:    14px;
+  --font-size-caption:    12px;
+  --font-size-overline:   11px;
+
+  /* Espacements (grille 8pt) */
+  --spacing-1:  4px;
+  --spacing-2:  8px;
+  --spacing-3:  12px;
+  --spacing-4:  16px;
+  --spacing-5:  20px;
+  --spacing-6:  24px;
+  --spacing-7:  32px;
+  --spacing-8:  40px;
+  --spacing-9:  48px;
+  --spacing-10: 56px;
+  --spacing-11: 64px;
+  --spacing-12: 80px;
+  --spacing-13: 96px;
+  --spacing-14: 120px;
+  --spacing-15: 144px;
+  --spacing-16: 160px;
+
+  /* Rayons */
+  --radius-xs:    4px;
+  --radius-sm:    8px;
+  --radius-md:    16px;
+  --radius-card:  28px;
+  --radius-panel: 40px;
+  --radius-pill:  999px;
+
+  /* Ombres */
+  --shadow-card:       0 8px 24px rgba(0,0,0,0.06);
+  --shadow-card-hover: 0 14px 36px rgba(0,0,0,0.10);
+  --shadow-focus:      0 0 0 3px rgba(201,241,223,0.45);
+
+  /* Animations */
+  --ease-out:    cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ─── Reset global ─── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: "Sora", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-wrap: pretty;
 }
+
+/* ─── Typographie display ─── */
+.headline {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.headline .punchline { font-style: italic; }
+
+/* ─── Bouton outline (défaut) ─── */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px 36px;
+  border-radius: 999px;
+  border: 2px solid currentColor;
+  background: transparent;
+  color: #fff;
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--duration-base) var(--ease-out),
+              color     var(--duration-base) var(--ease-out);
+}
+.btn-outline:hover { background: #fff; color: #000; }
+.btn-outline:active { transform: scale(0.98); }
+.btn-outline:focus-visible { outline: none; box-shadow: var(--shadow-focus); }
+
+/* ─── Bouton solid (blanc) ─── */
+.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px 36px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  background: #fff;
+  color: #000;
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--duration-base) var(--ease-out),
+              border-color var(--duration-base) var(--ease-out);
+}
+.btn-solid:hover { background: #C9F1DF; border-color: #C9F1DF; }
+.btn-solid:active { transform: scale(0.98); }
+.btn-solid:focus-visible { outline: none; box-shadow: var(--shadow-focus); }
+
+/* ─── Panneau grain ─── */
+.panel-grain {
+  position: relative;
+  border-radius: 40px;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 100%,
+    #9C9C9C 0%,
+    #5C5C5C 35%,
+    #1F1F1F 80%,
+    #0A0A0A 100%
+  );
+  overflow: hidden;
+}
+.panel-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  opacity: 0.55;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ─── Filets de séparation ─── */
+.divider { border-color: rgba(255,255,255,0.15); }
+
+/* ─── Focus anneau global ─── */
+:focus-visible { outline: none; box-shadow: var(--shadow-focus); }

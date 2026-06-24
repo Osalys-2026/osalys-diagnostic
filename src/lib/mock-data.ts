@@ -1,0 +1,622 @@
+import type { Thematique } from "./types";
+
+export const THEMATIQUES: Thematique[] = [
+  {
+    id: "confiance",
+    titre: "Confiance en soi",
+    subtitle: "& posture de dirigeant",
+    accroche: "Où en êtes-vous avec votre légitimité ?",
+    diagnostics: [
+      {
+        id: "confiance-diag-1",
+        thematique_id: "confiance",
+        titre: "Légitimité & posture",
+        description:
+          "Évaluez votre rapport à votre propre légitimité et la solidité de votre posture face aux situations de pression.",
+        duree_estimee: 4,
+        questions: [
+          {
+            id: "c1",
+            ordre: 1,
+            type_reponse: "likert",
+            poids: 1,
+            texte:
+              "Lorsque vous prenez une décision importante, vous faites confiance à votre jugement sans chercher une validation externe.",
+            options: [
+              { id: "c1-1", texte: "Jamais", valeur_score: 0 },
+              { id: "c1-2", texte: "Rarement", valeur_score: 25 },
+              { id: "c1-3", texte: "Parfois", valeur_score: 50 },
+              { id: "c1-4", texte: "Souvent", valeur_score: 75 },
+              { id: "c1-5", texte: "Toujours", valeur_score: 100 },
+            ],
+          },
+          {
+            id: "c2",
+            ordre: 2,
+            type_reponse: "choice",
+            poids: 1.2,
+            texte:
+              "Quand un collaborateur remet en question votre décision en réunion, votre première réaction est de :",
+            options: [
+              {
+                id: "c2-1",
+                texte: "Vous sentir déstabilisé et chercher à clore le débat",
+                valeur_score: 10,
+              },
+              {
+                id: "c2-2",
+                texte: "Vous justifier longuement pour convaincre",
+                valeur_score: 35,
+              },
+              {
+                id: "c2-3",
+                texte: "Écouter et répondre avec calme en maintenant votre position",
+                valeur_score: 75,
+              },
+              {
+                id: "c2-4",
+                texte: "Accueillir la remarque et réévaluer si elle apporte de la valeur",
+                valeur_score: 100,
+              },
+            ],
+          },
+          {
+            id: "c3",
+            ordre: 3,
+            type_reponse: "slider",
+            poids: 1,
+            texte:
+              "Sur une échelle de 0 à 100, où situez-vous votre niveau de légitimité perçue dans votre rôle actuel ?",
+            slider_min_label: "Je me sens imposteur",
+            slider_max_label: "Je suis pleinement légitime",
+          },
+          {
+            id: "c4",
+            ordre: 4,
+            type_reponse: "likert",
+            poids: 1,
+            texte:
+              "Vous acceptez de montrer vos doutes ou vos limites devant votre équipe lorsque c'est pertinent.",
+            options: [
+              { id: "c4-1", texte: "Jamais", valeur_score: 0 },
+              { id: "c4-2", texte: "Rarement", valeur_score: 25 },
+              { id: "c4-3", texte: "Parfois", valeur_score: 50 },
+              { id: "c4-4", texte: "Souvent", valeur_score: 75 },
+              { id: "c4-5", texte: "Toujours", valeur_score: 100 },
+            ],
+          },
+          {
+            id: "c5",
+            ordre: 5,
+            type_reponse: "choice",
+            poids: 1.1,
+            texte:
+              "Après un échec ou une erreur de jugement, comment vous en remettez-vous ?",
+            options: [
+              {
+                id: "c5-1",
+                texte: "Difficilement — je ressasse et m'en veux durablement",
+                valeur_score: 10,
+              },
+              {
+                id: "c5-2",
+                texte: "Je passe à autre chose mais l'erreur reste présente",
+                valeur_score: 40,
+              },
+              {
+                id: "c5-3",
+                texte: "J'analyse, j'en tire une leçon et j'avance",
+                valeur_score: 80,
+              },
+              {
+                id: "c5-4",
+                texte: "Je vois chaque échec comme une opportunité d'apprentissage",
+                valeur_score: 100,
+              },
+            ],
+          },
+          {
+            id: "c6",
+            ordre: 6,
+            type_reponse: "likert",
+            poids: 0.9,
+            texte:
+              "Vous êtes à l'aise pour prendre la parole devant un auditoire inconnu (investisseurs, partenaires, presse).",
+            options: [
+              { id: "c6-1", texte: "Jamais", valeur_score: 0 },
+              { id: "c6-2", texte: "Rarement", valeur_score: 25 },
+              { id: "c6-3", texte: "Parfois", valeur_score: 50 },
+              { id: "c6-4", texte: "Souvent", valeur_score: 75 },
+              { id: "c6-5", texte: "Toujours", valeur_score: 100 },
+            ],
+          },
+          {
+            id: "c7",
+            ordre: 7,
+            type_reponse: "choice",
+            poids: 1,
+            texte:
+              "Votre entreprise traverse une période difficile. Quelle phrase décrit le mieux votre posture intérieure ?",
+            options: [
+              {
+                id: "c7-1",
+                texte: "« Je ne suis pas sûr d'être la bonne personne pour traverser ça »",
+                valeur_score: 5,
+              },
+              {
+                id: "c7-2",
+                texte: "« J'avance mais je doute en permanence »",
+                valeur_score: 35,
+              },
+              {
+                id: "c7-3",
+                texte: "« C'est difficile, mais je sais que j'ai les ressources »",
+                valeur_score: 75,
+              },
+              {
+                id: "c7-4",
+                texte: "« La pression révèle ce dont je suis capable »",
+                valeur_score: 100,
+              },
+            ],
+          },
+          {
+            id: "c8",
+            ordre: 8,
+            type_reponse: "likert",
+            poids: 1,
+            texte:
+              "Vous assumez vos décisions passées, même celles qui se sont révélées mauvaises, sans chercher à rejeter la responsabilité.",
+            options: [
+              { id: "c8-1", texte: "Jamais", valeur_score: 0 },
+              { id: "c8-2", texte: "Rarement", valeur_score: 25 },
+              { id: "c8-3", texte: "Parfois", valeur_score: 50 },
+              { id: "c8-4", texte: "Souvent", valeur_score: 75 },
+              { id: "c8-5", texte: "Toujours", valeur_score: 100 },
+            ],
+          },
+        ],
+        profils: [
+          {
+            id: "confiance-p1",
+            score_min: 0,
+            score_max: 30,
+            label: "Zone de confort inconfortable",
+            analyse:
+              "Votre légitimité est encore fragile — non par manque de compétences, mais par manque de recul sur vous-même. Vous avez tendance à chercher une validation externe là où votre propre jugement devrait suffire. C'est une posture coûteuse en énergie qui freine votre impact réel.",
+            points_force: [
+              "Une sincérité et une humilité qui inspirent confiance",
+              "Une vigilance permanente sur la qualité de vos décisions",
+            ],
+            axes_dev: [
+              "Apprendre à vous appuyer sur vos décisions passées comme preuves de compétence",
+              "Développer un rapport plus apaisé à l'erreur et à l'imperfection",
+              "Identifier les contextes qui déclenchent le plus le doute",
+            ],
+          },
+          {
+            id: "confiance-p2",
+            score_min: 31,
+            score_max: 60,
+            label: "En transition active",
+            analyse:
+              "Vous avez déjà parcouru un chemin réel sur la question de la légitimité. Vous avancez, mais certaines situations précises — la contradiction publique, l'échec, la pression des pairs — viennent encore ébranler votre posture. C'est un point de bascule : les outils existent pour franchir le prochain palier.",
+            points_force: [
+              "Une capacité à analyser vos réactions avec lucidité",
+              "Une progression visible dans votre rapport à la pression",
+            ],
+            axes_dev: [
+              "Travailler les déclencheurs spécifiques qui fragilisent encore votre posture",
+              "Renforcer votre capacité à tenir une position sous contradiction",
+            ],
+          },
+          {
+            id: "confiance-p3",
+            score_min: 61,
+            score_max: 85,
+            label: "Leadership en émergence",
+            analyse:
+              "Votre confiance est solide sur la majorité des terrains. Vous avez développé une posture robuste qui résiste à la pression ordinaire. Il reste un plafond de verre : les situations de forte exposition ou d'ambiguïté extrême. C'est là que se joue le prochain niveau.",
+            points_force: [
+              "Une solidité remarquable dans les situations de pression courante",
+              "Une capacité à récupérer rapidement après les revers",
+            ],
+            axes_dev: [
+              "Explorer les situations de haute exposition qui restent inconfortables",
+              "Identifier comment transmettre cette posture à votre équipe",
+            ],
+          },
+          {
+            id: "confiance-p4",
+            score_min: 86,
+            score_max: 100,
+            label: "Dirigeant épanoui",
+            analyse:
+              "Vous incarnez une confiance mature — ni arrogance, ni fragilité. Vous avez intégré que la légitimité ne se prouve pas, elle se vit. C'est une ressource précieuse que vous pouvez désormais mettre au service du développement de vos équipes et de votre organisation.",
+            points_force: [
+              "Une stabilité intérieure qui rayonne sur l'ensemble de votre organisation",
+              "Un rapport sain à l'erreur et à l'imperfection",
+            ],
+            axes_dev: [
+              "Formaliser et transmettre votre posture aux dirigeants que vous accompagnez",
+              "Explorer comment aller encore plus loin dans l'impact collectif",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "leadership",
+    titre: "Leadership",
+    subtitle: "& gestion d'équipe",
+    accroche: "Comment incarnez-vous votre vision au quotidien ?",
+    diagnostics: [
+      {
+        id: "leadership-diag-1",
+        thematique_id: "leadership",
+        titre: "Vision & incarnation",
+        description:
+          "Évaluez la clarté de votre vision et votre capacité à la faire vivre au quotidien auprès de votre équipe.",
+        duree_estimee: 4,
+        questions: [
+          {
+            id: "l1",
+            ordre: 1,
+            type_reponse: "likert",
+            poids: 1,
+            texte:
+              "Vos collaborateurs sont capables d'expliquer la vision de l'entreprise dans leurs propres mots.",
+            options: [
+              { id: "l1-1", texte: "Jamais", valeur_score: 0 },
+              { id: "l1-2", texte: "Rarement", valeur_score: 25 },
+              { id: "l1-3", texte: "Parfois", valeur_score: 50 },
+              { id: "l1-4", texte: "Souvent", valeur_score: 75 },
+              { id: "l1-5", texte: "Toujours", valeur_score: 100 },
+            ],
+          },
+          {
+            id: "l2",
+            ordre: 2,
+            type_reponse: "choice",
+            poids: 1.2,
+            texte: "Comment définiriez-vous votre style de leadership dominant ?",
+            options: [
+              { id: "l2-1", texte: "Directif — je décide et j'explique", valeur_score: 30 },
+              { id: "l2-2", texte: "Consultatif — j'écoute puis je décide", valeur_score: 65 },
+              { id: "l2-3", texte: "Participatif — nous décidons ensemble", valeur_score: 85 },
+              { id: "l2-4", texte: "Situationnel — j'adapte selon le contexte", valeur_score: 100 },
+            ],
+          },
+          {
+            id: "l3",
+            ordre: 3,
+            type_reponse: "slider",
+            poids: 1,
+            texte: "Dans quelle mesure êtes-vous satisfait de votre capacité à déléguer réellement ?",
+            slider_min_label: "Je fais tout moi-même",
+            slider_max_label: "Je délègue avec confiance",
+          },
+          {
+            id: "l4",
+            ordre: 4,
+            type_reponse: "likert",
+            poids: 1,
+            texte: "Vous donnez du feedback régulier et constructif à vos collaborateurs directs.",
+            options: [
+              { id: "l4-1", texte: "Jamais", valeur_score: 0 },
+              { id: "l4-2", texte: "Rarement", valeur_score: 25 },
+              { id: "l4-3", texte: "Parfois", valeur_score: 50 },
+              { id: "l4-4", texte: "Souvent", valeur_score: 75 },
+              { id: "l4-5", texte: "Toujours", valeur_score: 100 },
+            ],
+          },
+          {
+            id: "l5",
+            ordre: 5,
+            type_reponse: "choice",
+            poids: 1,
+            texte: "Face à un collaborateur en difficulté, votre réflexe est de :",
+            options: [
+              { id: "l5-1", texte: "Reprendre la tâche vous-même pour gagner du temps", valeur_score: 15 },
+              { id: "l5-2", texte: "Lui donner des instructions précises à suivre", valeur_score: 40 },
+              { id: "l5-3", texte: "Lui poser des questions pour qu'il trouve lui-même", valeur_score: 90 },
+              { id: "l5-4", texte: "Adapter votre approche selon le profil et le contexte", valeur_score: 100 },
+            ],
+          },
+          {
+            id: "l6",
+            ordre: 6,
+            type_reponse: "likert",
+            poids: 0.9,
+            texte: "Votre équipe sait prendre des initiatives sans attendre votre validation pour chaque décision.",
+            options: [
+              { id: "l6-1", texte: "Jamais", valeur_score: 0 },
+              { id: "l6-2", texte: "Rarement", valeur_score: 25 },
+              { id: "l6-3", texte: "Parfois", valeur_score: 50 },
+              { id: "l6-4", texte: "Souvent", valeur_score: 75 },
+              { id: "l6-5", texte: "Toujours", valeur_score: 100 },
+            ],
+          },
+          {
+            id: "l7",
+            ordre: 7,
+            type_reponse: "slider",
+            poids: 1,
+            texte: "À quel niveau estimez-vous l'engagement de votre équipe envers la mission commune ?",
+            slider_min_label: "Très faible",
+            slider_max_label: "Très élevé",
+          },
+          {
+            id: "l8",
+            ordre: 8,
+            type_reponse: "likert",
+            poids: 1.1,
+            texte: "Vous prenez du temps chaque semaine pour réfléchir à votre posture de leader, pas seulement à l'opérationnel.",
+            options: [
+              { id: "l8-1", texte: "Jamais", valeur_score: 0 },
+              { id: "l8-2", texte: "Rarement", valeur_score: 25 },
+              { id: "l8-3", texte: "Parfois", valeur_score: 50 },
+              { id: "l8-4", texte: "Souvent", valeur_score: 75 },
+              { id: "l8-5", texte: "Toujours", valeur_score: 100 },
+            ],
+          },
+        ],
+        profils: [
+          {
+            id: "leadership-p1",
+            score_min: 0,
+            score_max: 30,
+            label: "Leader en construction",
+            analyse: "Votre leadership est encore fortement orienté vers le faire plutôt que le faire-faire. Vous portez beaucoup seul, ce qui bride à la fois votre impact et le développement de votre équipe. C'est une posture qui s'explique — mais qui coûte cher à terme.",
+            points_force: ["Un sens aigu des responsabilités", "Une expertise métier reconnue"],
+            axes_dev: [
+              "Apprendre à distinguer ce qui mérite votre attention directe de ce qui peut être délégué",
+              "Développer des rituels de feedback réguliers avec votre équipe",
+              "Clarifier et communiquer votre vision de façon systématique",
+            ],
+          },
+          {
+            id: "leadership-p2",
+            score_min: 31,
+            score_max: 60,
+            label: "En transition active",
+            analyse: "Vous avez développé des pratiques de leadership réelles mais encore inégales. Certains réflexes — déléguer, donner du feedback, développer l'autonomie — sont présents mais pas encore systématiques. Le potentiel est là, l'ancrage reste à consolider.",
+            points_force: ["Une vraie conscience de votre impact sur l'équipe", "Des compétences relationnelles en développement"],
+            axes_dev: [
+              "Systématiser les pratiques qui fonctionnent déjà bien",
+              "Travailler les situations où vous retombez dans le mode directif",
+            ],
+          },
+          {
+            id: "leadership-p3",
+            score_min: 61,
+            score_max: 85,
+            label: "Leadership en émergence",
+            analyse: "Votre leadership est solide sur la majorité des terrains. Vous savez créer les conditions de l'engagement et de l'autonomie. Il reste quelques zones d'ombre — probablement les situations de forte pression ou les profils les plus difficiles à développer.",
+            points_force: ["Une capacité réelle à développer les talents de votre équipe", "Un style de leadership adaptatif"],
+            axes_dev: [
+              "Explorer les situations limites qui font encore basculer votre posture",
+              "Formaliser votre approche pour la transmettre à vos managers",
+            ],
+          },
+          {
+            id: "leadership-p4",
+            score_min: 86,
+            score_max: 100,
+            label: "Dirigeant épanoui",
+            analyse: "Vous exercez un leadership mature, développeur et aligné. Votre équipe avance avec vous plutôt que derrière vous. C'est un actif rare et précieux pour votre organisation — la question maintenant est de savoir comment le démultiplier.",
+            points_force: ["Un impact direct et mesurable sur la performance collective", "Un écosystème de confiance autour de vous"],
+            axes_dev: [
+              "Passer d'un leadership d'équipe à un leadership d'organisation",
+              "Développer des leaders autour de vous qui reproduisent votre approche",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "equilibre",
+    titre: "Équilibre",
+    subtitle: "vie pro / vie perso",
+    accroche: "Dirigez-vous votre entreprise ou est-ce elle qui vous dirige ?",
+    diagnostics: [
+      {
+        id: "equilibre-diag-1",
+        thematique_id: "equilibre",
+        titre: "Maîtrise & ressourcement",
+        description:
+          "Évaluez votre niveau de maîtrise sur votre temps, votre énergie et votre capacité à vous ressourcer durablement.",
+        duree_estimee: 4,
+        questions: [
+          {
+            id: "e1",
+            ordre: 1,
+            type_reponse: "choice",
+            poids: 1.2,
+            texte: "À quelle fréquence rentrez-vous chez vous en ayant l'impression d'avoir vraiment choisi vos priorités de la journée ?",
+            options: [
+              { id: "e1-1", texte: "Rarement — l'urgence décide pour moi", valeur_score: 10 },
+              { id: "e1-2", texte: "Parfois — quand j'arrive à protéger le matin", valeur_score: 40 },
+              { id: "e1-3", texte: "Souvent — j'ai des rituels qui m'aident", valeur_score: 75 },
+              { id: "e1-4", texte: "Presque toujours — j'ai appris à arbitrer", valeur_score: 100 },
+            ],
+          },
+          {
+            id: "e2",
+            ordre: 2,
+            type_reponse: "likert",
+            poids: 1,
+            texte: "Vous êtes vraiment présent (mentalement) lors de vos moments personnels importants.",
+            options: [
+              { id: "e2-1", texte: "Jamais", valeur_score: 0 },
+              { id: "e2-2", texte: "Rarement", valeur_score: 25 },
+              { id: "e2-3", texte: "Parfois", valeur_score: 50 },
+              { id: "e2-4", texte: "Souvent", valeur_score: 75 },
+              { id: "e2-5", texte: "Toujours", valeur_score: 100 },
+            ],
+          },
+          {
+            id: "e3",
+            ordre: 3,
+            type_reponse: "slider",
+            poids: 1,
+            texte: "Sur une échelle de 0 à 100, quel est votre niveau d'énergie disponible en fin de semaine type ?",
+            slider_min_label: "Épuisé",
+            slider_max_label: "Plein d'énergie",
+          },
+          {
+            id: "e4",
+            ordre: 4,
+            type_reponse: "choice",
+            poids: 1,
+            texte: "Comment qualifieriez-vous votre rapport aux vacances et aux déconnexions ?",
+            options: [
+              { id: "e4-1", texte: "Je ne décroche pas vraiment — j'ai toujours le téléphone", valeur_score: 5 },
+              { id: "e4-2", texte: "Je décroche quelques jours, puis la culpabilité revient", valeur_score: 35 },
+              { id: "e4-3", texte: "Je me ressource correctement, même si c'est encore imparfait", valeur_score: 70 },
+              { id: "e4-4", texte: "J'ai ritualisé la déconnexion et je reviens plus fort", valeur_score: 100 },
+            ],
+          },
+          {
+            id: "e5",
+            ordre: 5,
+            type_reponse: "likert",
+            poids: 1,
+            texte: "Vous avez des activités ou des pratiques régulières qui vous rechargent (sport, méditation, lecture, famille...).",
+            options: [
+              { id: "e5-1", texte: "Jamais", valeur_score: 0 },
+              { id: "e5-2", texte: "Rarement", valeur_score: 25 },
+              { id: "e5-3", texte: "Parfois", valeur_score: 50 },
+              { id: "e5-4", texte: "Souvent", valeur_score: 75 },
+              { id: "e5-5", texte: "Toujours", valeur_score: 100 },
+            ],
+          },
+          {
+            id: "e6",
+            ordre: 6,
+            type_reponse: "choice",
+            poids: 1.1,
+            texte: "Vos proches diraient que votre entreprise est :",
+            options: [
+              { id: "e6-1", texte: "La priorité absolue qui efface tout le reste", valeur_score: 5 },
+              { id: "e6-2", texte: "Très présente, parfois au détriment de la famille", valeur_score: 35 },
+              { id: "e6-3", texte: "Importante, mais vous savez poser des limites", valeur_score: 75 },
+              { id: "e6-4", texte: "Une partie de votre vie parmi d'autres, bien intégrée", valeur_score: 100 },
+            ],
+          },
+          {
+            id: "e7",
+            ordre: 7,
+            type_reponse: "likert",
+            poids: 0.9,
+            texte: "Vous dormez suffisamment et votre sommeil vous ressource.",
+            options: [
+              { id: "e7-1", texte: "Jamais", valeur_score: 0 },
+              { id: "e7-2", texte: "Rarement", valeur_score: 25 },
+              { id: "e7-3", texte: "Parfois", valeur_score: 50 },
+              { id: "e7-4", texte: "Souvent", valeur_score: 75 },
+              { id: "e7-5", texte: "Toujours", valeur_score: 100 },
+            ],
+          },
+          {
+            id: "e8",
+            ordre: 8,
+            type_reponse: "slider",
+            poids: 1,
+            texte: "Dans quelle mesure êtes-vous satisfait de votre équilibre vie professionnelle / vie personnelle aujourd'hui ?",
+            slider_min_label: "Très insatisfait",
+            slider_max_label: "Très satisfait",
+          },
+        ],
+        profils: [
+          {
+            id: "equilibre-p1",
+            score_min: 0,
+            score_max: 30,
+            label: "En zone de surchauffe",
+            analyse: "Les signaux sont là : votre énergie est en déficit chronique, les frontières entre le professionnel et le personnel sont floues, et le ressourcement est devenu une exception. Ce n'est pas une question de volonté — c'est une question de structure. Sans intervention, le coût humain et professionnel sera réel.",
+            points_force: ["Un engagement total envers votre mission", "Une résistance et une endurance au-dessus de la moyenne"],
+            axes_dev: [
+              "Identifier et poser des rituels non négociables de ressourcement",
+              "Déléguer pour libérer de la bande passante mentale",
+              "Redéfinir ce que « être présent » signifie pour vous",
+            ],
+          },
+          {
+            id: "equilibre-p2",
+            score_min: 31,
+            score_max: 60,
+            label: "En recherche d'équilibre",
+            analyse: "Vous avez conscience du déséquilibre et vous cherchez à y remédier. Des pratiques existent mais restent fragiles — les premières à sauter quand la pression monte. L'enjeu est de les ancrer suffisamment pour qu'elles résistent à l'urgence.",
+            points_force: ["Une lucidité sur votre situation actuelle", "Des tentatives réelles de rééquilibrage"],
+            axes_dev: [
+              "Rendre vos pratiques de ressourcement non négociables",
+              "Travailler la culpabilité liée à la déconnexion",
+            ],
+          },
+          {
+            id: "equilibre-p3",
+            score_min: 61,
+            score_max: 85,
+            label: "En bonne voie",
+            analyse: "Vous avez trouvé un équilibre fonctionnel. Vous savez vous ressourcer et poser des limites, même si certaines situations viennent encore tester cet équilibre. Votre modèle tient la route — il mérite d'être encore affiné.",
+            points_force: ["Des rituels de ressourcement ancrés", "Une capacité à dire non qui se renforce"],
+            axes_dev: [
+              "Identifier les dernières situations qui déséquilibrent encore votre modèle",
+              "Explorer comment votre équilibre devient un exemple pour votre équipe",
+            ],
+          },
+          {
+            id: "equilibre-p4",
+            score_min: 86,
+            score_max: 100,
+            label: "Dirigeant épanoui",
+            analyse: "Vous avez construit un modèle de vie intégré où performance et épanouissement se nourrissent mutuellement. C'est rare et précieux. Votre énergie, votre présence et votre clarté mentale sont des actifs que votre organisation bénéficie directement.",
+            points_force: ["Un modèle de vie qui soutient votre performance sur le long terme", "Une présence et une clarté mentale qui inspirent"],
+            axes_dev: [
+              "Formaliser votre approche pour la partager avec vos équipes dirigeantes",
+              "Explorer comment approfondir encore votre pratique",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "forme",
+    titre: "État de forme",
+    subtitle: "& santé du dirigeant",
+    accroche: "Comment va vraiment le dirigeant derrière le rôle ?",
+    diagnostics: [],
+  },
+  {
+    id: "soft-skills",
+    titre: "Soft Skills",
+    subtitle: "& leadership relationnel",
+    accroche: "Où en sont vos compétences relationnelles de leader ?",
+    diagnostics: [],
+  },
+  {
+    id: "legitimite",
+    titre: "Légitimité",
+    subtitle: "& posture professionnelle",
+    accroche: "Avez-vous vraiment confiance en votre légitimité ?",
+    diagnostics: [],
+  },
+  {
+    id: "freelance",
+    titre: "Freelance",
+    subtitle: "& entrepreneuriat",
+    accroche: "Quelles crises traversez-vous dans votre activité ?",
+    diagnostics: [],
+  },
+  {
+    id: "conscience-soi",
+    titre: "Conscience de soi",
+    subtitle: "& développement personnel",
+    accroche: "Vous connaissez-vous vraiment pour avancer ?",
+    diagnostics: [],
+  },
+];
