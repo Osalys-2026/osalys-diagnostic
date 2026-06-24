@@ -92,7 +92,7 @@ export function Onboarding({ onComplete }: Props) {
               width: i === step ? "24px" : "8px",
               height: "8px",
               borderRadius: "999px",
-              background: i < step ? "#C9F1DF" : i === step ? "#fff" : "rgba(255,255,255,0.20)",
+              background: i < step ? "#C9F1DF" : i === step ? "#3535FF" : "rgba(255,255,255,0.20)",
               transition: "all 300ms cubic-bezier(0.2,0.7,0.2,1)",
             }}
           />
@@ -139,7 +139,7 @@ export function Onboarding({ onComplete }: Props) {
           }}
         >
           {current.key === "prenom" && values.prenom
-            ? `${values.prenom}, `
+            ? <><span style={{ color: "#3535FF" }}>{values.prenom}</span>{", "}</>
             : ""}
           {current.label}
         </h2>
@@ -167,10 +167,10 @@ export function Onboarding({ onComplete }: Props) {
               padding: "12px 0",
               outline: "none",
               transition: "border-color 200ms",
-              caretColor: "#C9F1DF",
+              caretColor: "#3535FF",
             }}
             onFocus={(e) => {
-              if (!error) (e.target as HTMLInputElement).style.borderBottomColor = "#C9F1DF";
+              if (!error) (e.target as HTMLInputElement).style.borderBottomColor = "#3535FF";
             }}
             onBlur={(e) => {
               if (!error) (e.target as HTMLInputElement).style.borderBottomColor = "rgba(255,255,255,0.25)";

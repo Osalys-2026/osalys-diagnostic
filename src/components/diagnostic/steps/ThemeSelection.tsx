@@ -58,7 +58,7 @@ export function ThemeSelection({ thematiques, prenom, onSelect }: Props) {
           marginBottom: "16px",
         }}
       >
-        {prenom ? `${prenom}, sur` : "Sur"} quoi{" "}
+        {prenom ? <><span style={{ color: "#3535FF" }}>{prenom}</span>{", sur"}</> : "Sur"} quoi{" "}
         <span style={{ fontStyle: "italic" }}>travaillons-nous ?</span>
       </h2>
 
@@ -180,7 +180,7 @@ function ThemeCard({
           strokeLinecap="round"
           strokeLinejoin="round"
           style={{
-            color: hovered ? "#C9F1DF" : "#fff",
+            color: hovered ? "#3535FF" : "#fff",
             transform: hovered ? "translate(4px, -4px)" : "translate(0, 0)",
             transition: "transform 200ms cubic-bezier(0.2,0.7,0.2,1), color 200ms",
             flexShrink: 0,

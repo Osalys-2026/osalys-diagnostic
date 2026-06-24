@@ -171,7 +171,7 @@ function StatCard({ label, value, suffix, accent }: { label: string; value: numb
         padding: "20px 24px",
         border: "1px solid rgba(255,255,255,0.09)",
         borderRadius: "12px",
-        background: accent ? "rgba(201,241,223,0.04)" : "rgba(255,255,255,0.02)",
+        background: accent ? "rgba(53,53,255,0.06)" : "rgba(255,255,255,0.02)",
       }}
     >
       <p style={{ fontSize: "11px", letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.40)", marginBottom: "10px" }}>
@@ -183,7 +183,7 @@ function StatCard({ label, value, suffix, accent }: { label: string; value: numb
           fontWeight: 700,
           fontSize: "32px",
           lineHeight: 1,
-          color: accent ? "#C9F1DF" : "#fff",
+          color: accent ? "#3535FF" : "#fff",
         }}
       >
         {value}

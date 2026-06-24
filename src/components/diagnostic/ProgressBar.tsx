@@ -55,7 +55,7 @@ export function ProgressBar({ current, total, label }: Props) {
           style={{
             height: "100%",
             width: `${pct}%`,
-            background: "#C9F1DF",
+            background: "#3535FF",
             borderRadius: "999px",
             transition: "width 300ms cubic-bezier(0.2,0.7,0.2,1)",
           }}

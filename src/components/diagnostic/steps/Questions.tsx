@@ -194,10 +194,10 @@ function OptionButton({ label, selected, onClick }: { label: string; selected: b
         alignItems: "center",
         gap: "16px",
         padding: "16px 20px",
-        background: selected ? "rgba(201,241,223,0.08)" : hovered ? "rgba(255,255,255,0.04)" : "transparent",
-        border: `1.5px solid ${selected ? "#C9F1DF" : hovered ? "rgba(255,255,255,0.30)" : "rgba(255,255,255,0.12)"}`,
+        background: selected ? "rgba(53,53,255,0.10)" : hovered ? "rgba(255,255,255,0.04)" : "transparent",
+        border: `1.5px solid ${selected ? "#3535FF" : hovered ? "rgba(255,255,255,0.30)" : "rgba(255,255,255,0.12)"}`,
         borderRadius: "12px",
-        color: selected ? "#C9F1DF" : "#fff",
+        color: selected ? "#fff" : "#fff",
         fontFamily: "Sora, sans-serif",
         fontSize: "clamp(14px, 1.2vw, 16px)",
         lineHeight: 1.45,
@@ -211,8 +211,8 @@ function OptionButton({ label, selected, onClick }: { label: string; selected: b
           width: "18px",
           height: "18px",
           borderRadius: "50%",
-          border: `1.5px solid ${selected ? "#C9F1DF" : "rgba(255,255,255,0.25)"}`,
-          background: selected ? "#C9F1DF" : "transparent",
+          border: `1.5px solid ${selected ? "#3535FF" : "rgba(255,255,255,0.25)"}`,
+          background: selected ? "#3535FF" : "transparent",
           flexShrink: 0,
           transition: "all 200ms",
           display: "flex",
@@ -252,7 +252,7 @@ function SliderInput({
           style={{
             width: "100%",
             appearance: "none",
-            background: `linear-gradient(to right, #C9F1DF ${value}%, rgba(255,255,255,0.15) ${value}%)`,
+            background: `linear-gradient(to right, #3535FF ${value}%, rgba(255,255,255,0.15) ${value}%)`,
             height: "3px",
             borderRadius: "999px",
             outline: "none",
@@ -265,8 +265,8 @@ function SliderInput({
             top: "-36px",
             left: `${value}%`,
             transform: "translateX(-50%)",
-            background: "#C9F1DF",
-            color: "#000",
+            background: "#3535FF",
+            color: "#fff",
             fontFamily: "Sora, sans-serif",
             fontWeight: 700,
             fontSize: "13px",
@@ -292,8 +292,8 @@ function SliderInput({
           border-radius: 50%;
           background: #fff;
           cursor: pointer;
-          border: 2px solid #C9F1DF;
-          box-shadow: 0 0 0 3px rgba(201,241,223,0.20);
+          border: 2px solid #3535FF;
+          box-shadow: 0 0 0 3px rgba(53,53,255,0.20);
         }
         input[type=range]::-moz-range-thumb {
           width: 22px;
@@ -301,7 +301,7 @@ function SliderInput({
           border-radius: 50%;
           background: #fff;
           cursor: pointer;
-          border: 2px solid #C9F1DF;
+          border: 2px solid #3535FF;
         }
       `}</style>
     </div>

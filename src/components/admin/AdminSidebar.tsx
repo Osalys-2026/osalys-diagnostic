@@ -132,7 +132,7 @@ export function AdminSidebar() {
                 transition: "all 150ms",
               }}
             >
-              <span style={{ color: active ? "#C9F1DF" : "rgba(255,255,255,0.30)" }}>
+              <span style={{ color: active ? "#3535FF" : "rgba(255,255,255,0.30)" }}>
                 {item.icon}
               </span>
               {item.label}
@@ -143,7 +143,7 @@ export function AdminSidebar() {
                     width: "4px",
                     height: "4px",
                     borderRadius: "50%",
-                    background: "#C9F1DF",
+                    background: "#3535FF",
                   }}
                 />
               )}

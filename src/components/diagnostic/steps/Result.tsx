@@ -187,7 +187,7 @@ export function Result({ passation, passationId, onNewDiagnostic, coach }: Props
           marginBottom: "56px",
         }}
       >
-        {lead.prenom ? `${lead.prenom}, voici` : "Voici"}{" "}
+        {lead.prenom ? <><span style={{ color: "#3535FF" }}>{lead.prenom}</span>{", voici"}</> : "Voici"}{" "}
         <span style={{ fontStyle: "italic" }}>votre diagnostic</span>
       </h1>
 
