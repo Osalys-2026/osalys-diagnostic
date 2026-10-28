@@ -41,9 +41,10 @@ export async function POST(req: Request) {
   try {
     const data: AnalyseInput = await req.json();
 
-    const apiKey = process.env.ANTHROPIC_API_KEY;
+    const apiKey = process.env.ANTHROPIC_API_KEY?.trim().replace(/^["']|["']$/g, "");
     if (!apiKey) {
-      return Response.json({ error: "Clé API manquante" }, { status: 500 });
+      console.error("[/api/analyse] ANTHROPIC_API_KEY manquante");
+      return Response.json({ error: "analyse_indisponible" }, { status: 500 });
     }
 
     const client = new Anthropic({ apiKey });
@@ -103,6 +104,7 @@ Règles absolues :
   } catch (err: unknown) {
     const msg = err instanceof Error ? err.message : String(err);
     console.error("[/api/analyse] error:", msg);
-    return Response.json({ error: msg }, { status: 500 });
+    // Le détail reste dans les logs Vercel : le visiteur ne voit jamais le message technique.
+    return Response.json({ error: "analyse_indisponible" }, { status: 500 });
   }
 }

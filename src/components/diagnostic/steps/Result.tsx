@@ -275,8 +275,12 @@ export function Result({ passation, passationId, onNewDiagnostic, coach }: Props
             </p>
           </div>
         ) : aiError ? (
-          <p style={{ fontSize: "13px", color: "rgba(232,106,51,0.80)", fontFamily: "Sora, sans-serif" }}>
-            Erreur : {aiError}
+          // Analyse personnalisée indisponible : on affiche l'analyse du profil, sans message technique.
+          <p style={{
+            fontSize: "16px", lineHeight: 1.8, color: "rgba(255,255,255,0.82)",
+            fontFamily: "Sora, sans-serif", whiteSpace: "pre-wrap",
+          }}>
+            {profil.analyse}
           </p>
         ) : (
           <div>
